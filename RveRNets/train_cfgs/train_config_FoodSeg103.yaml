@@ -1,0 +1,31 @@
+wandb_api_key: 'your wandb api key'
+wandb_project: 'wandb project name'
+wandb_logdir: 'wandb log dir in the local disk'
+wandb_run: 'wandb run name'
+class_dict: 'your path to FoodSeg103.yaml'
+deit_cache: 'huggingface cache dir in the local disk'
+input_imgsz: 224
+# alias of off-the-shelf model MobileNetV2 = mnet, ViT = vit, DeiT = deit, DeiT-distillation = deit-dist
+net1: 'mnet' # roi module
+net2: 'vit'  # extra-roi module
+deit_ver: 'facebook/deit-base-patch16-224' # huggingface repo id
+deit_dist_ver: 'facebook/deit-base-distilled-patch16-224' # huggingface repo id
+data_for_net1: 'path to your train set for roi module'
+data_for_net2: 'path to your train set for extra-roi module'
+valset_for_net1: 'path to your test set for roi module'
+valset_for_net2: 'path to your test set for extra-roi module'
+model_save_path: 'path to checkpoint dir'
+model_file_prefix: 'prefix of the checkpoint file name'
+save_model_every: 10
+# whether load the model from a saved checkpoint
+from_checkpoint: False
+checkpoint_path: 'path to saved checkpoint to load'
+batch_size: 50 
+num_epochs: 1
+learning_rate: 4e-3
+device: 'cuda:0'
+# Option to calculate classification f1 score for ambiguous classes
+ambiguity_test: False
+ambiguity_classes: # if ambiguity_test is True, following class numbers will be considered as the ambiguous class.
+    - 103
+    - 104
