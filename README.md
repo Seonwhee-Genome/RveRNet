@@ -88,6 +88,16 @@ For a RveRNet training, run :
 python3 train_RveRNet.py --config=./RveRNets/train_cfgs/train_config_FoodSeg103.yaml
 ```
 
+For inference of RveRNet, run:
+
+```bash
+python3 inference.py --config=./RveRNets/test_cfgs/test_config.yaml
+```
+
+In the configuration YAML file, you can choose the model for inference using `ckpt_path`. If you want batch inference for your test dataset, set `batch_inference` to `True`.
+
+
+
 ---
 
 If you use this code for a paper please cite:

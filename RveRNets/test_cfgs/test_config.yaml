@@ -1,0 +1,19 @@
+ckpt_path : 'path to model checkpoint'
+cls_yaml : 'path to FoodSeg103.yaml'
+hf_cache_dir : 'path to HuggingFace model cache dir"
+# Select either batch inference or single image inference
+# If you want to make a prediction for a single image, batch_inference should be False.
+batch_inference : True
+# For RveRNet batch inference
+roi_batch_path : 'path to your test set for roi module'
+extra_roi_batch_path : 'path to your train set for extra-roi module'
+# For RveRNet inference, the input should be a pair of ROI and extra-ROI cutout images
+roi_img_path : 'path to the single image for roi module'
+extra_roi_img_path : 'path to the single image for extra-roi module'
+# Use off-the-shelf models for the ROI module and extra-ROI module according to the trained model in ckpt_path.
+roi_module : 'mnet'
+extra_roi_module : 'vit'
+input_imgsz : 224
+num_classes : 105
+bs : 50
+learning_rate: 9e-3
